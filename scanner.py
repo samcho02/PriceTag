@@ -4,12 +4,12 @@ from pyzbar.pyzbar import decode
 
 ## video capture 
 capture = cv.VideoCapture(0)
+
 # sets up the video window
 capture.set(3, 640)
 capture.set(4, 480)
 
 while True:
-    
     success, img = capture.read()
     cv.imshow('Result', img)
 
@@ -18,7 +18,7 @@ while True:
             print(myData)
     
     c = cv.waitKey(1)           
-    if c == 27:                 # if the key pressed is esc, break loop
+    if c == 27:               # if the key pressed is esc, break loop
         break
 
 
