@@ -1,5 +1,5 @@
 # PriceTag
-Know the total price before checking out! 🛒
+Know the total price including tax before checking out! 🛒
 
 Creates a virtual shopping cart for users
 
