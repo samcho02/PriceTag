@@ -1,0 +1,94 @@
+body {
+    margin: 0;
+    font-family: 'Fredoka', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0072b5;
+    padding: 8px 12px;
+}
+
+.navbar_logo {
+    font-size: 24px;
+    font-weight: 500;
+    color: white;
+    padding: 8px;
+}
+
+.navbar_logo {
+    color: white;
+}
+
+.navbar_menu {
+    display: flex;
+    flex: 1;
+    list-style: none;
+    padding: 0;
+}
+
+.navbar_menu li {
+    padding: 8px 12px;
+}
+
+.navbar_menu li:hover,
+.navbar_user li:hover {
+    background-color: #00629c;
+    border-radius: 8px;
+}
+
+.navbar_user {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+}
+
+.navbar_user li {
+    padding: 8px 12px;
+}
+
+.navbar_menuBtn {
+    position: absolute;
+    display: none;
+    right: 32px;
+    font-size: 24px;
+    padding-top: 12px;
+}
+
+@media screen and (max-width: 760px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 24px;
+    }
+
+    .navbar_menu,
+    .navbar_user {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .navbar_menu li,
+    .navbar_user li {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .navbar_menuBtn {
+        display: block;
+    }
+
+    .navbar_menu.active,
+    .navbar_user.active {
+        display: flex;
+    }
+
+}
