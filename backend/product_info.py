@@ -3,7 +3,7 @@ import requests
 import lxml
 
 ## URL Request
-my = "0613008735418"
+my = "810497025840"
 url = "https://www.upcitemdb.com/upc/" + my
 result = requests.get(url)
 doc = BS(result.text, "lxml")
@@ -26,7 +26,7 @@ def store_product_price():
         data.append([ele for ele in colums if ele])
         
     # Adds Store, Product, Price data to dictionary
-    for list in data[:4]:
+    for list in data:
 
         dict["Store"].append(list[0])
         dict["Product"].append(list[1])
