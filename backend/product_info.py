@@ -12,28 +12,23 @@ doc = BS(result.text, "lxml")
 data = []
 dict = {"Store": [], "Product": [], "Price": []}
 
-## Web scrapes the product
-def store_product_price():
-    table = doc.find("table", attrs={'class': 'list' ,'style':'width:100%;'})
-    table_body = table.find('tbody')
 
-    rows = table_body.find_all('tr')
+table = doc.find("table", attrs={'class': 'list' ,'style':'width:100%;'})
+table_body = table.find('tbody')
+
+rows = table_body.find_all('tr')
+
+# finds the colum td
+for row in rows:
+    colums = row.findAll('td')
+    colums = [ele.text.strip() for ele in colums]
+    data.append([ele for ele in colums if ele])
     
-    # finds the colum td
-    for row in rows:
-        colums = row.findAll('td')
-        colums = [ele.text.strip() for ele in colums]
-        data.append([ele for ele in colums if ele])
-        
-    # Adds Store, Product, Price data to dictionary
-    for list in data:
+# Adds Store, Product, Price data to dictionary
+for list in data:
 
-        dict["Store"].append(list[0])
-        dict["Product"].append(list[1])
-        dict["Price"].append(list[2])
-        
-    print(dict)
-
-# ## Calls
-# store_product_price()
-# print(dict)
+    dict["Store"].append(list[0])
+    dict["Product"].append(list[1])
+    dict["Price"].append(list[2])
+    
+print(dict)
