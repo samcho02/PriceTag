@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup as BS
 import requests
 import lxml
 
-## URL Request
+# ## URL Request
 my = "810497025840"
 url = "https://www.upcitemdb.com/upc/" + my
 result = requests.get(url)
@@ -34,5 +34,6 @@ def store_product_price():
         
     print(dict)
 
-## Calls
-store_product_price()
+# ## Calls
+# store_product_price()
+# print(dict)
