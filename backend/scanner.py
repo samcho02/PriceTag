@@ -4,6 +4,7 @@ import numpy as np
 from pyzbar.pyzbar import decode
 
 myData = []
+my = ''
 
 
 def scanner():
